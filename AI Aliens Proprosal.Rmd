@@ -1,0 +1,72 @@
+---
+title: "AI Aliens Proposal"
+author: "AI Aliens"
+date: "2024-03-10"
+output: 
+  ioslides_presentation:
+    lib_dir: libs
+    logo: teamicon.svg
+    css: styles.css
+---
+<img src="Background.png" alt="Image Alt Text" width="1300" height="1200">
+<div class="slide-header">
+  AI Aliens Proposal
+</div>
+
+```{css, echo=FALSE}
+.slide-header {
+  background-color: #002060;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 36px;
+}
+.slide-header {
+  background-color: #002060;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 36px;
+}
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Team Members
+
+
+```{r, warning=FALSE, include=FALSE}
+library(dplyr)
+library(kableExtra)
+library(tidyr)
+```
+
+```{r, echo=FALSE, fig.align='center'}
+# Create dataframe with names
+df_names <- data.frame(
+  `Member 1` = "Archit Chawla",
+  `Member 2` = "Robby Connor",
+  `Member 3` = "Vamshi Kanisetty",
+  `Member 4` = "Hermanth Kona"
+)
+df_names%>%
+  kbl() %>%
+  kable_material_dark()
+
+```
+## Project Description  
+
+* **ISSUE** Create a method to discover Bias within machine learning models  
+**_____________________________________________________________________**  
+* Create a model that identify bias
+* Machine Learning is only insightful if true
+*
+
+## Analytical Methods
+  * [fairness](https://journal.r-project.org/articles/RJ-2022-019/#)
+  * [fairadapt](https://cran.r-project.org/web/packages/fairadapt/index.html)
+  * [fairmodels](https://journal.r-project.org/articles/RJ-2022-019/#)
+* Define and Understand a metric of fairness 
+
+## Evaluation Plan
