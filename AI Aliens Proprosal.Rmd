@@ -9,17 +9,26 @@ output:
     css: styles.css
 ---
 <img src="Background.png" alt="Image Alt Text" width="1300" height="1200">
-<div class="slide-header">
-  AI Aliens Proposal
-</div>
+\n
 
 ```{css, echo=FALSE}
-.slide-header {
-  background-color: #002060;
+.rounded-box {
+  background-color: #002060; 
   color: white;
-  padding: 20px;
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px; 
+  width: 800px; 
   text-align: center;
-  font-size: 36px;
+}
+.rounded-box-w {
+  background-color: #002060; 
+  color: white;
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px; 
+  width: 800px; 
+
 }
 .slide-header {
   background-color: #002060;
@@ -28,11 +37,13 @@ output:
   text-align: center;
   font-size: 36px;
 }
+```
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
+<div class="slide-header">
+  AI Aliens Proposal
+</div>
 ## Team Members
 
 
@@ -57,16 +68,42 @@ df_names%>%
 ```
 ## Project Description  
 
-* **ISSUE** Create a method to discover Bias within machine learning models  
+* **ISSUE** Create a method to discover Bias within machine learning models by user 
 **_____________________________________________________________________**  
 * Create a model that identify bias
-* Machine Learning is only insightful if true
-*
+  * Machine Learning is only insightful if true
+* Use the fairness model to train 100 models
+* use the models train to predict a fairness for other models from the hugging face api
 
-## Analytical Methods
-  * [fairness](https://journal.r-project.org/articles/RJ-2022-019/#)
-  * [fairadapt](https://cran.r-project.org/web/packages/fairadapt/index.html)
-  * [fairmodels](https://journal.r-project.org/articles/RJ-2022-019/#)
-* Define and Understand a metric of fairness 
+
+
+
+<div class="rounded-box-w">
+    filefobject <- fairness_check(explainer_lm,
+    protected = german$Sex,
+    privileged = "male"
+    )
+</div>
+
+
+## Analytical Methods  
+* [fairness](https://journal.r-project.org/articles/RJ-2022-019/#)
+* [fairadapt](https://cran.r-project.org/web/packages/fairadapt/index.html)
+* [fairmodels](https://cran.r-project.org/web/packages/fairmodels/index.html)
+    * [A detailed guide on fairmodels](https://cran.r-project.org/web/packages/fairmodels/fairmodels.pdf)
+* Use the Hugging Face API to pull in other tags and descriptors 
+
 
 ## Evaluation Plan
+* Utilize the F1 score to find the best match of recall and perceision  
+<div class="rounded-box">  
+  
+  2(precision * recall)  
+F1 = **---------------------------------------------------------------------------**    
+  precision + recall  
+</div>
+* Provide the confusion to provide all metrics
+<div style="text-align: left;">
+    <img src="cmatrix.png" alt="Image Alt Text" width="300" height="250">
+</div>
+
